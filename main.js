@@ -1,5 +1,6 @@
 const contacts = require('./data.json');
 
+
 // the following exercises require the data from data.json.
 // you can look in that file to see the data structure you
 // will be working with. 
@@ -14,6 +15,29 @@ const contacts = require('./data.json');
 //You can put your solutions after each comment below:
 
 //1. an array that contains all of the contacts that work at INSECTUS
+
+const insectusContacts = (people) => {
+    //create empty array to store insectus contacts
+    const insectusContacts = [];
+    //look at each contact
+    for (const contact of people) {
+        //look at company, if insectus, add to insectus-contacts
+        if (contact.company.toLowerCase() === "insectus" ) {
+            insectusContacts.push(contact)
+        }
+    }
+    
+    //return insectusContacts array
+    return insectusContacts
+}
+
+insectusContacts(contacts)
+
+const insectusContactsFilter = (people) => {
+  return  people.filter(person => {return person.company.toLowerCase() === "insectus"})
+}
+const insectusPeople = insectusContactsFilter(contacts)
+console.log(insectusPeople)
 
 //2. an array all of the contacts, with only the name property
 

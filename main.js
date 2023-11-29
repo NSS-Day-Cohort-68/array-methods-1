@@ -26,7 +26,6 @@ const insectusContacts = (people) => {
             insectusContacts.push(contact)
         }
     }
-    
     //return insectusContacts array
     return insectusContacts
 }
@@ -40,6 +39,23 @@ const insectusPeople = insectusContactsFilter(contacts)
 console.log(insectusPeople)
 
 //2. an array all of the contacts, with only the name property
+const getNames = (contacts) => {
+    //create an empty array to store names
+    const names = []
+    //look through each contact
+    for (const contact of contacts) {
+        //grab the name of each item
+        names.push(contact.name)
+        //pushing to names array
+    } 
+    //reurn the new array of names
+    return names
+}
+
+getNames(contacts)
+
+const names = contacts.map(contact => contact.name)
+console.log(names)
 
 //3. an array of all of the contacts over the age of 50
 

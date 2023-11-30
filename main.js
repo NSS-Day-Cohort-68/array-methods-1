@@ -59,6 +59,21 @@ console.log(names)
 
 //3. an array of all of the contacts over the age of 50
 
+// const contactsOver50 = () => {
+//     //create an empty array to store contacts over 50
+//     const peopleOver50 = []
+//     //look through each contact
+//     //look at each person's age
+//     //if their age is over 50,
+//     //add that contact to the empty array
+// }
+
+const contactsOver50 = (people) => {
+return people.filter(person => person.age > 50)
+}
+const result = contactsOver50(contacts)
+console.log(result)
+
 //4. the first ten contacts when alphabetically ordered by name
 
 //5. the oldest person's name

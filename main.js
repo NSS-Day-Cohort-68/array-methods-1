@@ -75,6 +75,28 @@ const result = contactsOver50(contacts)
 console.log(result)
 
 //4. the first ten contacts when alphabetically ordered by name
+    const firstTenSortedByName = (people) => {
+        //create 
+        const alphabeticalContacts = people.toSorted((a, b) => {
+            const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+            const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+          
+            // names must be equal
+            return 0;
+          });
+        
+        return alphabeticalContacts.slice(0, 10)
+        //push first 10 contacts to array in alpahbetical order  
+        // display the first ten contacts 
+    }
+const answer = firstTenSortedByName(contacts)
+console.log(answer)
 
 //5. the oldest person's name
 

@@ -74,10 +74,17 @@ return people.filter(person => person.age > 50)
 const result = contactsOver50(contacts)
 console.log(result)
 
+const contactsCopy = () => {
+    //copy each object in contacts 
+    return contacts.map(contact => ({...contact})) 
+    //create new array
+    
+}
 //4. the first ten contacts when alphabetically ordered by name
     const firstTenSortedByName = (people) => {
+      
         //create 
-        const alphabeticalContacts = people.toSorted((a, b) => {
+        const alphabeticalContacts = people.sort((a, b) => {
             const nameA = a.name.toUpperCase(); // ignore upper and lowercase
             const nameB = b.name.toUpperCase(); // ignore upper and lowercase
             if (nameA < nameB) {
@@ -95,10 +102,30 @@ console.log(result)
         //push first 10 contacts to array in alpahbetical order  
         // display the first ten contacts 
     }
-const answer = firstTenSortedByName(contacts)
+
+const answer = firstTenSortedByName(contactsCopy())
 console.log(answer)
 
 //5. the oldest person's name
+const oldestPerson = (people) => {
+    // sort the contacts in reverse by age
+      const contactsSortedByAge = people.sort((person1, person2) => {
+        const age1 = person1.age
+        const age2 = person2.age
+
+        return age2 - age1
+      }) 
+
+    // grab the person
+    const oldPersonName = contactsSortedByAge[0].name
+
+    // return their name
+    return oldPersonName
+}
+
+
+const old = oldestPerson(contactsCopy());
+console.log(old);
 
 //6. the contact id with the name Isabella Burke
 
